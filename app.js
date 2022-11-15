@@ -6,9 +6,11 @@ const { User } = require('./Model/userModel');
 const router = require('./Routes/index');
 const app=express();
 const PORT=process.env.PORT||3000
+const cors=require('cors')
 
 app.use(express.json())
 app.use(router)
+app.use(cors())
 
 
 mongoose.connect(process.env.MONGODB_URL_ATLAS,{
