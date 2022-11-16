@@ -10,7 +10,8 @@ const cors=require('cors')
 
 app.use(express.json())
 app.use(router)
-app.use(cors({ origin: ['http://localhost:3000', 'https://docmeets.com', 'https://docmeets.netlify.app', 'https://docmeets-dev.netlify.app', 'https://docmeets-doctor-dashboard.netlify.app'], credentials: true }));
+
+app.use(cors({ origin: ['http://localhost:3000'], credentials: true }));
 
 mongoose.connect(process.env.MONGODB_URL_ATLAS,{
     useNewUrlParser:true,
